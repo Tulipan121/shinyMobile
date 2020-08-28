@@ -3,7 +3,10 @@ $(function () {
   var workerId = $('base').attr('href');
   // ensure that this code does not locally
   if (typeof workerId != "undefined") {
-    var newpath = window.location.href;
+    var hash = window.location.hash;
+    var search = window.location.search;
+    var pathname = window.location.pathname;
+    var newpath = pathname + workerId + search + hash;
     window.history.replaceState( {} , 'newpath', newpath);
   }
 
