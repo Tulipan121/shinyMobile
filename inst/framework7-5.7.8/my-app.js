@@ -1,20 +1,10 @@
 $(function () {
-  // handles shinyapps.io
+  // handles shinyapps.io, shiny server pro and rstudio connect
   var workerId = $('base').attr('href');
   // ensure that this code does not locally
-<<<<<<< HEAD:inst/framework7-5.5.0/my-app.js
-  if (workerId) {
-    var pathname = window.location.pathname;
-    var newpath = pathname + workerId;
-    window.history.pushState( {} , 'newpath', newpath);
-=======
   if (typeof workerId != "undefined") {
-    var hash = window.location.hash;
-    var search = window.location.search;
-    var pathname = window.location.pathname;
-    var newpath = pathname + workerId + search + hash;
+    var newpath = window.location.href;
     window.history.replaceState( {} , 'newpath', newpath);
->>>>>>> master:inst/framework7-5.7.8/my-app.js
   }
 
   // From this we can recover the workerId and the sessionId. sessionId
