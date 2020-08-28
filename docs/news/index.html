@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -46,7 +50,6 @@
 
 <meta property="og:title" content="Changelog" />
 <meta property="og:image" content="/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -64,7 +67,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -78,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shinyMobile</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.0.9000</span>
       </span>
     </div>
 
@@ -104,9 +107,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Dark-Theme.html">Dark-Theme</a>
-    </li>
-    <li>
       <a href="../articles/Gadgets.html">Gadgets</a>
     </li>
     <li>
@@ -131,7 +131,8 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Releases</li>
-    <li class="dropdown-header">shinyMobile 0.5.0.9000</li>
+    <li class="dropdown-header">shinyMobile 0.8.0.9000</li>
+    <li class="dropdown-header">shinyMobile 0.7.0</li>
     <li class="dropdown-header">shinyMobile 0.1.0</li>
     <li class="divider"></li>
     <li>
@@ -142,7 +143,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/RinteRface/shinyMobile">
+  <a href="https://github.com/RinteRface/shinyMobile/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -160,13 +161,44 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
+      <h1 data-toc-skip>Changelog <small></small></h1>
       <small>Source: <a href='https://github.com/RinteRface/shinyMobile/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="shinymobile-0509000" class="section level1">
-<h1 class="page-header">
-<a href="#shinymobile-0509000" class="anchor"></a>shinyMobile 0.5.0.9000<small> Unreleased </small>
+    <div id="shinymobile-0809000" class="section level1">
+<h1 class="page-header" data-toc-text="0.8.0.9000">
+<a href="#shinymobile-0809000" class="anchor"></a>shinyMobile 0.8.0.9000<small> Unreleased </small>
+</h1>
+<div id="breaking-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
+</div>
+<div id="major-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#major-changes" class="anchor"></a>Major changes</h2>
+<ul>
+<li>update framework7 from 5.5.0 to 5.7.8</li>
+<li>add <code><a href="../reference/f7Menu.html">f7Menu()</a></code>, <code><a href="../reference/f7MenuItem.html">f7MenuItem()</a></code>, <code><a href="../reference/f7MenuDropdown.html">f7MenuDropdown()</a></code>, <code><a href="../reference/f7MenuDropdownDivider.html">f7MenuDropdownDivider()</a></code> and <code><a href="../reference/f7OpenMenuDropdown.html">f7OpenMenuDropdown()</a></code>: special buttons and dropdown elements, behaving like action buttons</li>
+</ul>
+</div>
+<div id="minor-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#minor-changes" class="anchor"></a>Minor changes</h2>
+<ul>
+<li>Add choices to <code><a href="../reference/updateF7SmartSelect.html">updateF7SmartSelect()</a></code>: thanks <a href='https://github.com/Edireito'>@Edireito</a></li>
+</ul>
+</div>
+<div id="bug-fixes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>Bug fixes</h2>
+<ul>
+<li>Fix <a href='https://github.com/RinteRface/shinyMobile/issues/104'>#104</a>: f7Picker cannot have NULL value. Prevents JS from bracking. Thanks <a href='https://github.com/Seyphaton'>@Seyphaton</a></li>
+</ul>
+</div>
+</div>
+    <div id="shinymobile-070" class="section level1">
+<h1 class="page-header" data-toc-text="0.7.0">
+<a href="#shinymobile-070" class="anchor"></a>shinyMobile 0.7.0<small> 2020-06-17 </small>
 </h1>
 <div id="notes" class="section level2">
 <h2 class="hasAnchor">
@@ -175,9 +207,9 @@
 <li>disable backdrop in <code><a href="../reference/f7Searchbar.html">f7Searchbar()</a></code> since it messes up with tabbar navigation. This does not have any impact on user experience. In a future release of shinyMobile, <code><a href="../reference/f7Searchbar.html">f7Searchbar()</a></code> will have input binding associated as well as more parameters for configuration</li>
 </ul>
 </div>
-<div id="breaking-changes" class="section level2">
+<div id="breaking-changes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
+<a href="#breaking-changes-1" class="anchor"></a>Breaking changes</h2>
 <ul>
 <li>
 <code><a href="../reference/f7SmartSelect.html">f7SmartSelect()</a></code>: type param becomes openIn to align with other inputs</li>
@@ -201,10 +233,11 @@
 </li>
 </ul>
 </div>
-<div id="major-changes" class="section level2">
+<div id="major-changes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#major-changes" class="anchor"></a>Major changes</h2>
+<a href="#major-changes-1" class="anchor"></a>Major changes</h2>
 <ul>
+<li>new <code>input$shinyInfo</code> and <code>input$lastInputChanged</code> (see shinyMobile tools vignette for more details)</li>
 <li>
 <code><a href="../reference/f7SmartSelect.html">f7SmartSelect()</a></code> has input binding as well as an update function <code><a href="../reference/updateF7SmartSelect.html">updateF7SmartSelect()</a></code>
 </li>
@@ -219,17 +252,21 @@
 <li>add input binding to <code><a href="../reference/f7Fabs.html">f7Fabs()</a></code> to get the status of the container</li>
 <li>add <code><a href="../reference/updateF7Button.html">updateF7Button()</a></code> and <code><a href="../reference/updateF7Fabs.html">updateF7Fabs()</a></code>
 </li>
-<li>new pullToRefresh parameter to <code><a href="../reference/f7Init.html">f7Init()</a></code>. Pull the screen from top to bottom fires input$ptr which becomes TRUE. When the pull to refresh event is finished, input$ptr is NULL. Useful to trigger events in an observEvent</li>
+<li>new pullToRefresh parameter to <code><a href="../reference/f7Init.html">f7Init()</a></code>. Pull the screen from top to bottom fires <code>input$ptr</code> which becomes TRUE. When the pull to refresh event is finished, <code>input$ptr</code> is NULL. Useful to trigger events in an observeEvent</li>
 <li>add new <code><a href="../reference/updateF7Select.html">updateF7Select()</a></code>: thanks <a href='https://github.com/Seyphaton'>@Seyphaton</a> for the suggestion</li>
 <li>add <code><a href="../reference/f7TogglePopup.html">f7TogglePopup()</a></code> to close/open a <code><a href="../reference/f7Popup.html">f7Popup()</a></code>. Thanks <a href='https://github.com/pasahe'>@pasahe</a></li>
 <li>add <code><a href="../reference/preview_mobile.html">preview_mobile()</a></code>: function that previews your app in a seleted range of devices (iphone, samsung, htc, …)</li>
 <li>redesign the way inputs options are passed from R to Javascript. This does not have impact on the user side but improves security and code quality</li>
 </ul>
 </div>
-<div id="minor-changes" class="section level2">
+<div id="minor-changes-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#minor-changes" class="anchor"></a>Minor changes</h2>
+<a href="#minor-changes-1" class="anchor"></a>Minor changes</h2>
 <ul>
+<li>add new <code><a href="../reference/f7File.html">f7File()</a></code> for file upload. See shiny <code>fileInput</code>
+</li>
+<li>add new <code><a href="../reference/f7DownloadButton.html">f7DownloadButton()</a></code> to work properly with the shiny <code>downloadHandler</code> function. Thanks <a href='https://github.com/bwganblack'>@bwganblack</a> for the report</li>
+<li>add new tapHoldDelay parameter to <code><a href="../reference/f7Init.html">f7Init()</a></code> to control the delay necessary to trigger a long press (default to 750 ms)</li>
 <li>new <code><a href="../reference/preloader.html">f7ShowPreloader()</a></code> and <code><a href="../reference/preloader.html">f7HidePreloader()</a></code>
 </li>
 <li>new <code><a href="../reference/f7TextArea.html">f7TextArea()</a></code> input and <code><a href="../reference/updateF7Text.html">updateF7TextArea()</a></code> on the server side</li>
@@ -281,6 +318,7 @@
 <h2 class="hasAnchor">
 <a href="#bug-fix" class="anchor"></a>Bug fix</h2>
 <ul>
+<li>Fix issue in <code>updateF7AutoComplete</code>: text input was not updated. Thanks <a href='https://github.com/sanchez5674'>@sanchez5674</a> for the report</li>
 <li>Remove duplicated html tag in <code><a href="../reference/f7Page.html">f7Page()</a></code>. Thanks @ pvictor</li>
 <li>Fix issue in <code><a href="../reference/sheet.html">f7Sheet()</a></code> wrong css style applied when multiple sheets are in the same app</li>
 <li>Fix issue in <code><a href="../reference/f7Tabs.html">f7Tabs()</a></code>: if one put <code><a href="../reference/f7Tabs.html">f7Tabs()</a></code> inside a <code><a href="../reference/f7Tab.html">f7Tab()</a></code> in a parent <code><a href="../reference/f7Tabs.html">f7Tabs()</a></code>, the input binding was giving the wrong tab for the top level tabset (once we clicked in the tab containing the sub-tabset).</li>
@@ -311,7 +349,7 @@
 </div>
 </div>
     <div id="shinymobile-010" class="section level1">
-<h1 class="page-header">
+<h1 class="page-header" data-toc-text="0.1.0">
 <a href="#shinymobile-010" class="anchor"></a>shinyMobile 0.1.0<small> 2019-11-30 </small>
 </h1>
 <ul>
@@ -320,14 +358,10 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#shinymobile-0509000">0.5.0.9000</a></li>
-        <li><a href="#shinymobile-010">0.1.0</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
@@ -339,7 +373,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

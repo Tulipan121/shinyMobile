@@ -1,6 +1,6 @@
 tabOthers <- f7Tab(
   tabName = "Others",
-  icon = f7Icon("more_round"),
+  icon = f7Icon("plus_circle"),
 
   # standalone tabs
   f7BlockTitle(title = "f7Tabs") %>% f7Align(side = "center"),
@@ -97,10 +97,10 @@ tabOthers <- f7Tab(
   f7Swiper(
     id = "my-swiper",
     f7Slide(
-      plot_ly(z = ~volcano, type = "contour")
+      plotOutput("sin")
     ),
     f7Slide(
-      plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
+      plotOutput("cos")
     )
   ),
 

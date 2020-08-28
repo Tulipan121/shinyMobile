@@ -1,4 +1,19 @@
-# shinyMobile 0.5.0.9000
+# shinyMobile 0.8.0.9000
+
+## Breaking changes
+
+## Major changes
+- update framework7 from 5.5.0 to 5.7.8
+- add `f7Menu()`, `f7MenuItem()`, `f7MenuDropdown()`, `f7MenuDropdownDivider()` and `f7OpenMenuDropdown()`: special buttons and dropdown elements, behaving like action buttons
+
+## Minor changes
+- Add choices to `updateF7SmartSelect()`: thanks @Edireito
+
+## Bug fixes
+- Fix #104: f7Picker cannot have NULL value. Prevents JS from bracking. Thanks @Seyphaton
+
+
+# shinyMobile 0.7.0
 
 ## Notes
 - disable backdrop in `f7Searchbar()` since it messes up with tabbar navigation. This does 
@@ -24,6 +39,7 @@ different from the text displayed. valueText is then an internal parameter.
 - remove maximizable parameter from `f7Appbar()`
 
 ## Major changes
+- new `input$shinyInfo` and `input$lastInputChanged` (see shinyMobile tools vignette for more details)
 - `f7SmartSelect()` has input binding as well as an update function `updateF7SmartSelect()`
 - new `f7VirtualList()`, `f7VirtualListItem()`, `updateF7VirtualList()`: high performance list with caching system -> faster rendering (up to 10x faster than `f7List()`). Ability to add item(s), remove item(s), move item, filter items, ...
 - new messagebar parameter to `f7TabLayout()`. This allows to use the `f7Messagebar()` in a tabs layout configuration. 
@@ -36,9 +52,7 @@ for authentication
 - new `updateF7DatePicker()`: thanks @pvictor
 - add input binding to `f7Fabs()` to get the status of the container
 - add `updateF7Button()` and `updateF7Fabs()`
-- new pullToRefresh parameter to `f7Init()`. Pull the screen from top to bottom
-fires input$ptr which becomes TRUE. When the pull to refresh event is finished,
-input$ptr is NULL. Useful to trigger events in an observEvent
+- new pullToRefresh parameter to `f7Init()`. Pull the screen from top to bottom fires `input$ptr` which becomes TRUE. When the pull to refresh event is finished, `input$ptr` is NULL. Useful to trigger events in an observeEvent
 - add new `updateF7Select()`: thanks @Seyphaton for the suggestion
 - add `f7TogglePopup()` to close/open a `f7Popup()`. Thanks @pasahe
 - add `preview_mobile()`: function that previews your app in a seleted range of
@@ -47,6 +61,10 @@ devices (iphone, samsung, htc, ...)
 on the user side but improves security and code quality
 
 ## Minor changes
+- add new `f7File()` for file upload. See shiny `fileInput`
+- add new `f7DownloadButton()` to work properly with the shiny `downloadHandler` function. Thanks @bwganblack for the report
+- add new tapHoldDelay parameter to `f7Init()` to control the delay necessary to trigger
+a long press (default to 750 ms)
 - new `f7ShowPreloader()` and `f7HidePreloader()`
 - new `f7TextArea()` input and `updateF7TextArea()` on the server side
 - add block title for `f7checkBoxGroup()` and `f7Radio()`
@@ -84,6 +102,7 @@ on old devices
 - add more copyrights
 
 ## Bug fix
+- Fix issue in `updateF7AutoComplete`: text input was not updated. Thanks @sanchez5674 for the report
 - Remove duplicated html tag in `f7Page()`. Thanks @ pvictor
 - Fix issue in `f7Sheet()` wrong css style applied when multiple sheets are in the same app
 - Fix issue in `f7Tabs()`: if one put `f7Tabs()` inside a `f7Tab()` in a parent `f7Tabs()`, the input binding was giving the wrong tab for the top level tabset (once we clicked in the tab containing the sub-tabset). 

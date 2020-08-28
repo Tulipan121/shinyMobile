@@ -9,17 +9,10 @@
 #' @param color Icon color, if any.
 #' @param style CSS styles to be applied on icon, for example
 #'  use \code{font-size: 56px;} to have a bigger icon.
-#' @param old Use \code{TRUE} for old icons, default is \code{TRUE},
-#'  but in a future version of shinyMobile default will be \code{FALSE}.
+#' @param old Deprecated. This was to handle old and new icons but shinyMobile only uses
+#' new icons from now. This parameter will be removed in a future release.
 #'
 #' @examples
-#'
-#' f7Icon("close", old = TRUE)
-#' f7Icon("multiply", old = FALSE)
-#'
-#' # Icon size
-#' f7Icon("multiply", style = "font-size: 56px;", old = FALSE)
-#'
 #' if(interactive()){
 #'  library(shiny)
 #'  library(shinyMobile)
@@ -33,12 +26,12 @@
 #'      f7List(
 #'       f7ListItem(
 #'         title = tagList(
-#'          f7Icon("email")
+#'          f7Icon("envelope")
 #'         )
 #'       ),
 #'       f7ListItem(
 #'         title = tagList(
-#'          f7Icon("email_fill", color = "green")
+#'          f7Icon("envelope_fill", color = "green")
 #'         )
 #'       ),
 #'       f7ListItem(
@@ -58,22 +51,17 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-f7Icon <- function(..., lib = NULL, color = NULL, style = NULL, old = TRUE) {
+f7Icon <- function(..., lib = NULL, color = NULL, style = NULL, old = NULL) {
   call_ <- as.list(match.call())
-  if (is.null(call_$old)) {
+  if (!is.null(call_$old)) {
     warning(
-      "In a future version of shinyMobile, default for ",
-      "old argument will be FALSE, to continue to use old icons ",
-      "specify explicitly old = TRUE."
+      "Deprecated. This was to handle old and new icons. ",
+      "This parameter will be removed in a future release."
     )
   }
   if (!is.null(lib)) {
     if (identical(lib, "ios")) {
-      if (isTRUE(old)) {
-        iconCl <- "icon f7-icons-old ios-only"
-      } else {
-        iconCl <- "icon f7-icons ios-only"
-      }
+      iconCl <- "icon f7-icons ios-only"
     }
     if (identical(lib, "md")) {
       iconCl <- "icon material-icons md-only"
@@ -81,11 +69,7 @@ f7Icon <- function(..., lib = NULL, color = NULL, style = NULL, old = TRUE) {
   } else {
     # class icon is necessary so that icons with labels render well,
     # for instance
-    if (isTRUE(old)) {
-      iconCl <- "icon f7-icons-old"
-    } else {
-      iconCl <- "icon f7-icons"
-    }
+    iconCl <- "icon f7-icons"
   }
 
   if (!is.null(color)) {
@@ -94,7 +78,7 @@ f7Icon <- function(..., lib = NULL, color = NULL, style = NULL, old = TRUE) {
 
   iconTag <- htmltools::attachDependencies(
     x = shiny::tags$i(class = iconCl, style = style, ...),
-    value = html_dependencies_f7Icons(old = old)
+    value = html_dependencies_f7Icons()
   )
   htmltools::browsable(iconTag)
 }

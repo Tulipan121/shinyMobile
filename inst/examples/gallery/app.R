@@ -1,6 +1,5 @@
 library(shiny)
 library(shinyMobile)
-library(plotly)
 
 # source modules
 e <- environment()
@@ -172,6 +171,9 @@ shinyApp(
       trigger = trigger
     )
 
+    output$sin <- renderPlot(plot(sin, -pi, 2*pi))
+    output$cos <- renderPlot(plot(cos, -pi, 2*pi))
+
     output$text <- renderPrint(input$text)
     output$password <- renderPrint(input$password)
     output$textarea <- renderPrint(input$textarea)
@@ -187,7 +189,7 @@ shinyApp(
     output$smartdata <- renderTable({
       head(mtcars[, c("mpg", input$smartsel), drop = FALSE])
     }, rownames = TRUE)
-    output$selectDate <- renderText(input$date)
+    output$selectDate <- renderPrint(input$date)
     output$autocompleteval <- renderPrint(input$myautocomplete)
 
     lapply(1:12, function(i) {
@@ -336,6 +338,26 @@ shinyApp(
           session = session
         )
       } else if (input$action1_button == 2) {
+        f7Dialog(
+          inputId = "actionSheetDialog",
+          title = "Click me to launch a Toast!",
+          type = "confirm",
+          text = "You clicked on the second button",
+          session = session
+        )
+      }
+    })
+
+    observeEvent(input$swipeAction_button, {
+      if (input$swipeAction_button == 1) {
+        f7Notif(
+          text = "You clicked on the first button",
+          icon = f7Icon("bolt_fill"),
+          title = "Notification",
+          titleRightText = "now",
+          session = session
+        )
+      } else if (input$swipeAction_button == 2) {
         f7Dialog(
           inputId = "actionSheetDialog",
           title = "Click me to launch a Toast!",

@@ -36,7 +36,7 @@
 #'          id = "tabset",
 #'          f7Tab(
 #'            tabName = "Tab 1",
-#'            icon = f7Icon("email"),
+#'            icon = f7Icon("envelope"),
 #'            active = TRUE,
 #'            "Text 1"
 #'          ),
@@ -143,7 +143,7 @@ f7Back <- function(targetId) {
     href = "#",
     id = paste0("back_", targetId),
     class = "button button-small display-flex margin-left-half",
-    f7Icon("reply_fill")
+    f7Icon("arrowshape_turn_up_left_fill")
   )
 
   shiny::tagList(backJS, backTag)
@@ -198,7 +198,7 @@ f7Next <- function(targetId) {
     href = "#",
     id = paste0("next_", targetId),
     class = "button button-small display-flex margin-left-half",
-    f7Icon("forward_fill")
+    f7Icon("arrowshape_turn_up_right_fill")
   )
 
   shiny::tagList(nextJS, nextTag)

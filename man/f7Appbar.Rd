@@ -45,7 +45,7 @@ if (interactive()) {
          id = "tabset",
          f7Tab(
            tabName = "Tab 1",
-           icon = f7Icon("email"),
+           icon = f7Icon("envelope"),
            active = TRUE,
            "Text 1"
          ),
